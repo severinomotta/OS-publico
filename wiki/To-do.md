@@ -1,0 +1,6 @@
+Lista única das tarefas do usuário, de qualquer área — o que ele pediu pra lembrar ou precisa fazer/decidir/cobrar. É esta lista que responde "o que tenho pra fazer hoje / na minha lista". Pendência técnica de projeto (trabalho que o Claude registra por conta própria) NÃO entra aqui: vive em [[To-do-Operacional]] — item só cruza de lá pra cá a pedido do usuário. Um item só sai daqui com confirmação do usuário ou evidência inequívoca de que foi feito — nunca por prazo vencido (prazo vencido e item ainda aqui é atraso, não conclusão). Concluído, o item migra pra [[Concluídos]]. Item cujo texto muda ganha carimbo `Atualizado: DD/MM` no fim; sem carimbo, vale a data de Origem. Item é ponteiro (~700 bytes no máximo): atualizar é reescrever o item, nunca anexar parágrafo — o hook `SessionStart` avisa quando passa ([[Lint-da-Wiki]]). **Organizada por área** (### dentro de "Pendente"): item novo entra na área dele; área nova nasce com o primeiro item real, nunca vazia. O hook injeta só o **mapa** (área + título de cada item); pra responder "o que tenho pra fazer", esta página é lida inteira do disco e todos os itens entram na resposta.
+
+Formato do item: `- **Título curto.** Estado/próximo passo em uma ou duas frases. Contexto: [[Página]]. Origem: DD/MM.`
+
+## Pendente
+

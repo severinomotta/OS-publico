@@ -1,0 +1,10 @@
+#!/bin/sh
+# Todo commit no branch principal vai pro GitHub na hora, pra sessão na nuvem
+# (captura pelo celular) nunca ler uma wiki velha, e pra cópia do GitHub
+# estar sempre em dia. Em segundo plano e calado: se falhar (sem rede), o
+# hook SessionStart (.claude/hooks/sync-git.js) tenta de novo e avisa.
+# Instalado na instalação (docs/instalacao.md) em .git/hooks/post-commit.
+RAMO="$(git rev-parse --abbrev-ref HEAD)"
+case "$RAMO" in main|master) ;; *) exit 0 ;; esac
+(git push -q origin "$RAMO" >/dev/null 2>&1 &)
+exit 0

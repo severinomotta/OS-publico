@@ -1,0 +1,8 @@
+.claude/settings.local.json
+.claude/hooks/estado/
+__pycache__/
+# Documentos guardados só no PC (índice em wiki/Documentos.md)
+arquivos/
+# Credenciais NUNCA entram no repositório (ficam em ~/.credentials/)
+client_secret*.json
+token*.json

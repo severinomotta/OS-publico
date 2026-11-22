@@ -1,0 +1,2 @@
+# Script de shell precisa de LF pra rodar no Mac/Linux
+docs/opcional/post-commit text eol=lf
