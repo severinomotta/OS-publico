@@ -31,10 +31,10 @@ de "Mostrar mais opções").
    comando e esperando o "pode". No Windows sem Git for Windows: parar e
    pedir pra instalar (git-scm.com/downloads/win), porque os hooks rodam
    no Git Bash.
-2. **GitHub primeiro.** O modelo é um repositório privado: sem login o
-   clone falha. Conferir se o usuário tem conta no GitHub (se não,
-   guiar a criação em github.com) e se aceitou o convite pro modelo
-   (e-mail do GitHub, botão "Accept invitation"). Rodar
+2. **GitHub primeiro.** O modelo é público, mas o vault do usuário
+   nasce como repositório privado na conta dele, então o login vem
+   antes. Conferir se o usuário tem conta no GitHub (se não, guiar a
+   criação em github.com). Rodar
    `gh auth login` explicando o que vai aparecer: escolher GitHub.com,
    HTTPS, entrar pelo navegador; o terminal mostra um código de 8
    letras, o navegador abre, o usuário cola o código e autoriza.
