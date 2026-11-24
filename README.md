@@ -89,6 +89,20 @@ fácil.
    clique antes em **Mostrar mais opções**.
 3. Abre a mesma janela escura, já dentro da pasta.
 
+### Passo 0 — Conferir que o Windows está na SUA conta
+
+Tudo o que você instalar e todo login que fizer (Claude, GitHub) fica
+guardado na conta do Windows que está aberta. Se o computador é
+compartilhado e está logado na conta de outra pessoa, o seu sistema
+nasce misturado com as contas dela.
+1. Abra o terminal em qualquer pasta (Caminho A ou B acima).
+2. Escreva `whoami` e aperte **Enter**.
+3. Aparece algo como `nome-do-pc\ana`. A parte depois da barra tem que
+   ser **você**. Se for o nome de outra pessoa, pare aqui e crie a sua
+   conta no Windows: Configurações → Contas → Outros usuários (ou
+   "Família e outros usuários") → Adicionar conta. Depois entre nela
+   (menu Iniciar → foto do usuário → sua conta) e recomece deste passo.
+
 ### Passo 1 — Instalar o Git for Windows
 
 É o programa que guarda o histórico do seu sistema e faz o espelho com o
@@ -114,7 +128,19 @@ GitHub.
 4. Espere. Aparecem algumas linhas de texto e, no fim, a mensagem de que
    a instalação terminou. Se aparecer erro em vermelho, tire uma foto da
    tela e confira a página oficial: https://code.claude.com/docs/en/setup.
-5. **Feche a janela** (no X, como qualquer janela). É necessário: a
+5. Confira a linha **Location**: o caminho tem que ter o seu nome de
+   usuário (ex.: `C:\Users\ana\.local\bin\claude.exe`). Se tiver o nome
+   de outra pessoa, volte ao Passo 0.
+6. Se aparecer um aviso amarelo **"Setup notes"** dizendo que
+   `...\.local\bin is not in your PATH`, o Windows ainda não sabe onde o
+   programa está e não vai achar o comando `claude`. Copie esta linha
+   inteira, cole na mesma janela e aperte **Enter** (não aparece nada,
+   é normal):
+
+   ```
+   [Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path","User") + ";$env:USERPROFILE\.local\bin", "User")
+   ```
+7. **Feche a janela** (no X, como qualquer janela). É necessário: a
    janela que estava aberta durante a instalação não "sabe" que o
    programa novo existe.
 

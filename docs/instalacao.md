@@ -24,7 +24,12 @@ de "Mostrar mais opções").
 
 ## Fase 1 — fora do vault (a sessão foi aberta numa pasta qualquer)
 
-1. **Ambiente.** Conferir o que existe: `git`, `node` (os hooks são
+1. **Ambiente.** Antes de tudo, conferir a conta: `whoami` e o
+   caminho da pasta do usuário (`$env:USERPROFILE`) têm que ser do
+   próprio usuário. Se for de outra pessoa (PC compartilhado logado na
+   conta de alguém), parar e guiar a criação da conta dele no Windows
+   (README, Passo 0): seguir assim mistura os logins de Claude, GitHub e
+   Git com as contas da outra pessoa. Depois, conferir o que existe: `git`, `node` (os hooks são
    JavaScript), `python` (robô Google e scripts) e `gh` (GitHub CLI).
    Instalar o que faltar com o gerenciador do sistema (`winget` no
    Windows, `brew` no Mac, o da distribuição no Linux), mostrando o
